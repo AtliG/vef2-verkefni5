@@ -1,6 +1,16 @@
 # Vefforritun 2, 2021, verkefni 5
+Atli Guðjónsson, atg13@hi.is
 
-[Kynning á verkefni](https://youtu.be/EyRD1dVVDiU).
+[Hlekkur á heroku](https://atlig-vef2-2021-v5.herokuapp.com/)
+
+Passa þarf uppá að hafa .env skrá eins og .env.example.
+
+Til að setja upp og keyra verkefnið þarf að keyra eftirfarandi skipanir
+
+```
+npm i
+npm start
+```
 
 ## Routing
 
