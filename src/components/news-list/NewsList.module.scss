@@ -1,0 +1,30 @@
+.newsList {
+	border-radius: 5px;
+	border: 1px solid #000000;
+	background:  #FFF8DC;
+	width: 26vw;
+
+	margin-right: 1rem;
+	margin-bottom: 1rem;
+	padding-left: 1rem;
+
+	&__list {
+		padding: 0;
+		list-style: none;
+	}
+
+	&__all {
+		margin-top: 1.5rem;
+		margin-bottom: 1rem;
+		&__nav {
+			font-weight: bold;
+			color: #000000;
+			text-decoration: none;
+		}
+	}
+
+	&__noData {
+		background: #ffffff;
+		margin-left: 1rem;
+	}
+}

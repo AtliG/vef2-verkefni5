@@ -1,0 +1,11 @@
+.notFound {
+	&__back {
+		margin-top: 1.5rem;
+		margin-bottom: 1rem;
+		&__nav {
+			font-weight: bold;
+			color: #000000;
+			text-decoration: none;
+		}
+	}
+}

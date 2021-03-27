@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-import { NewsList } from '../components/news-list/NewsList';;
+import { NewsList } from '../components/news-list/NewsList';
+
+import s from './Index.module.scss';;
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -56,7 +58,7 @@ export function Index() {
 	const newsGroups = data || [];
 	
 	return (
-		<div>
+		<div className = {s.index}>
 			{newsGroups.length > 0 &&  newsGroups.map((group,i) => {
 				const { id, title } = group;
 				return (

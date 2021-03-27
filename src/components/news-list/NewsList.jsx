@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { News } from '../news/News';
-import { NavLink } from 'react-router-dom';;
+import { NavLink } from 'react-router-dom';
+
+import s from './NewsList.module.scss';;
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -51,13 +53,13 @@ export function NewsList({id, title}) {
 
 	if (error) {
 		return (
-			<p> Villa kom upp: {error} </p> 
+			<p className={s.newsList__noData}> Villa kom upp: {error} </p> 
 		);
 	}
 
 	if (loading) {
 		return (
-			<p> Sæki gögn... </p>
+			<p className={s.newsList__noData}> Sæki gögn... </p>
 		);
 	}
 
@@ -66,11 +68,11 @@ export function NewsList({id, title}) {
 	const displayNews = news.slice(0,5);
 
 	return (
-		<div>
+		<section className={s.newsList}>
 			<h2>
 				{title}
 			</h2>
-			<ul>
+			<ul className={s.newsList__list}>
 				{displayNews.length > 0 && displayNews.map((article, i) => {
 					const {title, link } = article;
 					return (
@@ -82,12 +84,11 @@ export function NewsList({id, title}) {
 					)
 				})}
 			</ul>
-			<b>
-				<NavLink to={id}>Allar fréttir</NavLink>
-			</b>
-			{/* <p><NavLink to="/">Til baka</NavLink></p> */}
-		</div>
-
+			<div className={s.newsList__all}>
+				<a href={id} className={s.newsList__all__nav}>
+					Allar fréttir
+				</a>
+			</div>
+		</section>
 	);
-	
 }

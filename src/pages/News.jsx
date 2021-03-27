@@ -4,6 +4,8 @@ import { NavLink, useParams } from 'react-router-dom';
 import { News } from '../components/news/News';
 import {NotFound} from './NotFound';
 
+import s from './News.module.scss';
+
 const apiUrl = process.env.REACT_APP_API_URL;
 
 
@@ -57,7 +59,14 @@ export function NewsPage() {
 
 	if (error) {
 		return (
-			<p> Villa kom upp: {error} </p> 
+			<div>
+				<p> Villa kom upp: {error} </p> 
+				<div className={s.news__back}>
+					<a href="/" className={s.news__back__nav}>
+						Til baka
+					</a>
+				</div>
+			</div>
 		);
 	}
 
@@ -72,11 +81,11 @@ export function NewsPage() {
 	const title = data.title;
 
 	return (
-		<div>
+		<div className={s.news}>
 			<h2>
 				{title}
 			</h2>
-			<ul>
+			<ul className={s.news__list}>
 				{news.length > 0 && news.map((article, i) => {
 					const {title, link } = article;
 					return (
@@ -88,9 +97,11 @@ export function NewsPage() {
 					)
 				})}
 			</ul>
-			<b>
-				<NavLink to="/">Til baka</NavLink>
-			</b>
+			<div className={s.news__back}>
+				<a href="/" className={s.news__back__nav}>
+					Til baka
+				</a>
+			</div>
 		</div>
 	);
 }
