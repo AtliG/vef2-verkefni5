@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import { News } from '../components/news/News';
 import {NotFound} from './NotFound';
@@ -49,7 +49,7 @@ export function NewsPage() {
 
 			fetchData();
 
-	}, []);
+	}, [url]);
 
 	if (validRoutes.indexOf(id) < 0) {
 		return (
@@ -62,9 +62,9 @@ export function NewsPage() {
 			<div>
 				<p> Villa kom upp: {error} </p> 
 				<div className={s.news__back}>
-					<a href="/" className={s.news__back__nav}>
+					<Link to={"/"} className={s.news__back__nav}>
 						Til baka
-					</a>
+					</Link>
 				</div>
 			</div>
 		);
@@ -98,9 +98,9 @@ export function NewsPage() {
 				})}
 			</ul>
 			<div className={s.news__back}>
-				<a href="/" className={s.news__back__nav}>
+				<Link to={"/"} className={s.news__back__nav}>
 					Til baka
-				</a>
+				</Link>
 			</div>
 		</div>
 	);

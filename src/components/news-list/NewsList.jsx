@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { News } from '../news/News';
-import { NavLink } from 'react-router-dom';
 
 import s from './NewsList.module.scss';;
 

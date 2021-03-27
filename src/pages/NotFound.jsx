@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import s from './NotFound.module.scss';
 
 export function NotFound() {
@@ -6,9 +7,9 @@ export function NotFound() {
 		<section className={s.notFound}>
 			<h2>Síða fannst ekki</h2>
 			<div className={s.notFound__back}>
-				<a href="/" className={s.notFound__back__nav}>
+				<Link to={"/"} className={s.notFound__back__nav}>
 					Til baka
-				</a> 
+				</Link> 
 			</div>
 		</section>
 	)
