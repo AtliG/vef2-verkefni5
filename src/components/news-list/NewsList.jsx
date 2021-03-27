@@ -53,13 +53,21 @@ export function NewsList({id, title}) {
 
 	if (error) {
 		return (
-			<p className={s.newsList__noData}> Villa kom upp: {error} </p> 
+			<section className={s.newsList__noData}>
+				<p>
+					Villa kom upp: {error} 
+				</p> 
+			</section>
 		);
 	}
 
 	if (loading) {
 		return (
-			<p className={s.newsList__noData}> Sæki gögn... </p>
+			<section className={s.newsList__noData}>
+				<p className={s.newsList__noData}>
+					Sæki gögn... 
+				</p>
+			</section>
 		);
 	}
 
